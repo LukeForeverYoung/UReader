@@ -11,6 +11,7 @@ Jiabo Ye*, Anwen Hu*, Haiyang Xu, Qinghao Ye, Ming Yan, Guohai Xu, Chenliang Li,
 <hr>
 <div align="center">
 <a href="http://mm-chatgpt.oss-cn-zhangjiakou.aliyuncs.com/mplug_owl_demo/released_checkpoint/UReader_Arxiv.pdf"><img src="assets/Paper-PDF-orange.svg"></a>
+<a href="https://arxiv.org/abs/2310.05126"><img src="assets/Paper-Arxiv-orange.svg" ></a>
 
 ![images](assets/intro_case.jpg)
 </div>
