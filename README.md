@@ -36,6 +36,13 @@ ureader_images
 ```
 
 ## Training, Inference and Evaluation
+### Environment
+Follow [mPLUG-Owl](https://github.com/X-PLUG/mPLUG-Owl) to prepare your environment.
+
+We validate the codes with: 
+* PyTorch 1.13.1
+* CUDA 11.7
+* transformers 4.29.1.
 
 ### Training
 Prepare the checkpoint of mPLUG-Owl from [https://huggingface.co/MAGAer13/mplug-owl-llama-7b](https://huggingface.co/MAGAer13/mplug-owl-llama-7b). Put the download checkpoint in ```checkpoints/mplug-owl-llama-7b```.
@@ -80,7 +87,7 @@ If you found this work useful, consider giving this repository a star and citing
       eprint={2310.05126},
       archivePrefix={arXiv},
       primaryClass={cs.CV}
-      
+
 @misc{ye2023mplugdocowl,
       title={mPLUG-DocOwl: Modularized Multimodal Large Language Model for Document Understanding}, 
       author={Jiabo Ye and Anwen Hu and Haiyang Xu and Qinghao Ye and Ming Yan and Yuhao Dan and Chenlin Zhao and Guohai Xu and Chenliang Li and Junfeng Tian and Qian Qi and Ji Zhang and Fei Huang},
