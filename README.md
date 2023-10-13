@@ -69,6 +69,7 @@ sudo apt install default-jdk
 ```
 * Download and unzip benchmark_files.zip at ```benchmark_files```.
 * Download and unzip ureader_json.zip at ```ureader_json```.
+* Pull checkpoint from [https://huggingface.co/Mizukiluke/ureader-v1/tree/main](https://huggingface.co/Mizukiluke/ureader-v1/tree/main) to ```checkpoints/ureader``` or use ```--eval_checkpoint``` to specify the weight which should be evaluated.
 
 The evaluation consists of two stage.
 

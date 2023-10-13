@@ -1,6 +1,10 @@
 evaluate_results*
 checkpoints/
 benchmark_files/
+ureader_images
+ureader_json
+ureader_images/
+ureader_json/
 # Initially taken from Github's Python gitignore file
 tensorboard/*
 # Byte-compiled / optimized / DLL files
