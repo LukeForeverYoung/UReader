@@ -5,6 +5,8 @@ from PIL import Image
 from mplug_owl.modeling_mplug_owl import MplugOwlForConditionalGeneration
 from mplug_owl.tokenization_mplug_owl import MplugOwlTokenizer
 from mplug_owl.processing_mplug_owl import MplugOwlImageProcessor, MplugOwlProcessor
+from sconf import Config
+from pipeline.data_utils.processors.builder import build_processors
 
 
 def get_model(pretrained_ckpt, use_bf16=False):
