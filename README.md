@@ -16,10 +16,6 @@ Jiabo Ye*, Anwen Hu*, Haiyang Xu, Qinghao Ye, Ming Yan, Guohai Xu, Chenliang Li,
 ![images](assets/intro_case.jpg)
 </div>
 
-## Training and Inference
-
-Coming soon!
-
 ## Instruction-tuning dataset
 Download the jsonl files and images from [Mizukiluke/ureader-instruction-1.0](https://huggingface.co/datasets/Mizukiluke/ureader-instruction-1.0/tree/main).
 
@@ -39,6 +35,40 @@ ureader_images
 └── VisualMRC
 ```
 
+## Training, Inference and Evaluation
+
+### Training
+Prepare the checkpoint of mPLUG-Owl from [https://huggingface.co/MAGAer13/mplug-owl-llama-7b](https://huggingface.co/MAGAer13/mplug-owl-llama-7b). Put the download checkpoint in ```checkpoints/mplug-owl-llama-7b```.
+
+For A100 80G
+```
+bash scripts/train_it.sh
+```
+For V100 32G
+```
+bash scripts/train_it_v100.sh
+```
+
+### Inference
+We provide interface to build model and processer in ```pipeline/interface.py```. You can refer to ```pipeline/evaluation.py``` for more specific usage.
+
+A offline demo can be start by ```python -m app```
+
+### Evaluation
+* Install java for pycocoevalcap. 
+```
+sudo apt update
+sudo apt install default-jdk
+```
+* Download and unzip benchmark_files.zip at ```benchmark_files```.
+* Download and unzip ureader_json.zip at ```ureader_json```.
+
+The evaluation consists of two stage.
+
+In the first stage, we export the model output by running```NPROC_PER_NODE=1 bash scripts/eval/eval_benchmark.sh```. You can also set distributed environment variables to enable distributed inference.
+
+In the second stage, we evaluate the model output by running ```python -m pipeline.eval_utils.run_evaluation```.
+
 
 ## Citation
 If you found this work useful, consider giving this repository a star and citing our paper as followed:
@@ -50,5 +80,14 @@ If you found this work useful, consider giving this repository a star and citing
       eprint={2310.05126},
       archivePrefix={arXiv},
       primaryClass={cs.CV}
+      
+@misc{ye2023mplugdocowl,
+      title={mPLUG-DocOwl: Modularized Multimodal Large Language Model for Document Understanding}, 
+      author={Jiabo Ye and Anwen Hu and Haiyang Xu and Qinghao Ye and Ming Yan and Yuhao Dan and Chenlin Zhao and Guohai Xu and Chenliang Li and Junfeng Tian and Qian Qi and Ji Zhang and Fei Huang},
+      year={2023},
+      eprint={2307.02499},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
+}
 }
 ```
