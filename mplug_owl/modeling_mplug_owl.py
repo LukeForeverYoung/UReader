@@ -1441,8 +1441,8 @@ class MplugOwlForConditionalGeneration(MplugOwlPreTrainedModel):
             return_dict=return_dict,
             output_attentions=self.config.output_attentions,
         )
-        # outputs.loss = (outputs.loss * loss_mask.view(-1)
-        #                 ).sum()/loss_mask.sum()
+        outputs.loss = (outputs.loss * loss_mask.view(-1)
+                        ).sum()/loss_mask.sum()
         return outputs
 
     @torch.no_grad()
