@@ -34,6 +34,8 @@ ureader_images
 ├── TextVQA
 └── VisualMRC
 ```
+## Checkpoint
+The checkponit is available on [Huggingface model hub](https://huggingface.co/Mizukiluke/ureader-v1/tree/main). 
 
 ## Training, Inference and Evaluation
 ### Environment
@@ -55,6 +57,7 @@ For V100 32G
 ```
 bash scripts/train_it_v100.sh
 ```
+If you are suffering from the NaN issues, pull the latest version of our repository may help. We have uncommented the loss_mask to prevent Nan loss caused by overlong text inputs.
 
 ### Inference
 We provide interface to build model and processer in ```pipeline/interface.py```. You can refer to ```pipeline/evaluation.py``` for more specific usage.
