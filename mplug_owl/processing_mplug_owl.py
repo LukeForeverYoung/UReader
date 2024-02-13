@@ -70,7 +70,7 @@ class MplugOwlProcessor(ProcessorMixin):
         
         if text is not None and images is not None:
             encoding["pixel_values"] = images
-            encoding["patch_positions"] = patch_position
+            encoding["patch_positions"] = patch_positions
             return BatchEncoding(data=encoding)
         elif text is not None:
             return BatchEncoding(data=encoding)
